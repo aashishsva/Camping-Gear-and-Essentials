@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1920px;
+    background-color: #F2F2F2;
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar{
+    width: 100%;
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 20px 100px;
+    position: fixed;
+    z-index: 10;
+}
+.navbar .logo{
+    font-size: 1.5rem;
+}
+
+.navbar .list ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.navbar .list ul li a:hover{
+    color:orangered;
+    transition: 0.2s ease-in-out;
+}
+.hamburger{
+    display: none;
+}
+
+@media screen  and (max-width: 900px) {
+    .navbar{
+        flex-direction: column;
+        gap: 50px;
+        position: static;
+    }
+    .navbar .list ul{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navbar{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 50px;
+    }
+    .hamburger{
+        display: initial;
+    }
+    .list{
+        display: none;
+    }
+}
+
+/* HERO SECTION */
+
+.hero-section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    background-image: url('https://koa.com/blog/images/family-camping-at-sunset.jpg?preset=heroimagecropped');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.image-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.178);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+}
+
+.hero-section h1{
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
+}
+
+.hero-section p{
+    font-size: 1.4rem;
+    margin-top: 10px;
+    padding: 0 15%;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+}
+
+.hero-section .container button {
+    background-color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 10px;
+    margin-top: 50px;
+    font-size: 1.2rem;
+    border: 1px solid transparent; 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
+    transition: 0.2s ease-in-out; 
+    cursor: pointer;
+}
+
+.hero-section .container button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); 
+    backdrop-filter: blur(2.5px);
+    border: 1px solid rgb(255, 255, 255); 
+    color: white;
+}
+@media screen and (max-width:900px) {
+    .hero-section .container button{
+        margin: 0;
+        margin-top: 20px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero-section .container h1{
+        font-size: 2rem;
+    }
+    .hero-section .container p{
+        font-size: 1rem;
+    }
+    .hero-section .container button{
+        padding: 10px;
+    }
+}
+
+
+/*Services SECTION */
+.our-services{
+    position: relative;
+    background-color: #F2F2F2;
+    height: 100%;
+    /* margin-top: 50px; */
+    padding-top: 50px;
+}
+.our-services .services-text{
+    text-align: center;
+    
+}
+
+.our-services .services-text h2{
+    font-size: 2.3rem;
+}
+
+.our-services .services-text p{
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+.cards{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    justify-content: center; 
+    padding: 50px;
+    column-gap: 0; 
+    /* row-gap: 40px; */
+    margin: 0 50px;
+}
+
+.cards .card{
+    height: 350px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    /* margin: 50px;
+    padding: 50px; */
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: 0.2s ease-in-out;
+    p{
+        padding: 0 30px;
+    }
+}
+.our-services .cards .card .image img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:768px) {
+    .cards{
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+@media screen and (max-width:600px) {
+    .cards{
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+}
+
+
+/* About us */
+.about-us {
+    background-color: #F2F2F2;
+    min-height: 100vh;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.about-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-heading h2 {
+    font-size: 2.3rem;
+}
+
+.about-heading p {
+    font-size: 1.1rem;
+}
+
+.about-us .content {
+    padding: 0 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: start;
+}
+.about-us .content .cont{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-us .content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+.content .cont ul{
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .about-us .content {
+        padding: 0 100px; /* Larger padding for bigger screens */
+    }
+}
+
+
+
+
+/* contact us */
+
+.contact-us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F2F2F2;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+.contact-us .contact-heading h2{
+    font-size: 1.8rem;
+    text-align: center;
+}
+.contact-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    /* margin-right: 10px; */
+    color: #333;
+}
+
+.contact-form form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    width: 150px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 900px) {
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-form input, 
+    .contact-form textarea,button{
+        margin-left: 150px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .contact-form form{
+        width: 100%;
+    }
+    .contact-form input, 
+    .contact-form textarea,button{
+        margin-left: 20px;
+        width: 300px;
+    }
+}
+
